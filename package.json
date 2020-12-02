@@ -1,0 +1,20 @@
+{
+  "name": "webhook-apigateway-lambda-slack",
+  "version": "1.0.0",
+  "description": "AWS Lambda Contentful Webhook adaptor as a node module.",
+  "main": "lambda.js",
+  "scripts": {
+    "setup": "mkdir dist",
+    "test": "node src/test.js",
+    "bundle": "zip -r dist/bundle.zip src/lambda.js node_modules",
+    "deploy": "aws lambda update-function-code --function-name contentfulWebhookLambda --zip-file fileb://./dist/bundle.zip"
+  },
+  "author": "frederik@contentful.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.11.1",
+    "express": "^4.17.1",
+    "promise": "^7.1.1"
+  },
+  "repository": "https://github.com/contentful-labs/webhook-apigateway-lambda-slack.js.git"
+}
